@@ -2,14 +2,14 @@
 // Example: basic.js
 // For more cec-events: http://www.cec-o-matic.com/
 // -------------------------------------------------------------------------- //
-
+require('console-stamp')(console, { pattern: 'dd/mm/yyyy HH:MM:ss.l' });
 var nodecec = require( 'node-cec' );
 
 var NodeCec = nodecec.NodeCec;
 var CEC     = nodecec.CEC;
 
 var cec = new NodeCec( 'node-cec-monitor' );
-
+var POWER_ON = false;
 
 // -------------------------------------------------------------------------- //
 //- KILL CEC-CLIENT PROCESS ON EXIT
@@ -36,6 +36,8 @@ cec.on( 'REPORT_POWER_STATUS', function (packet, status) {
   for (var i = keys.length - 1; i >= 0; i--) {
     if (CEC.PowerStatus[keys[i]] == status) {
       console.log('POWER_STATUS:', keys[i]);
+      if(keys[i] === 'ON') POWER_ON=true;
+      if(keys[i] === 'STANDBY') POWER_ON=false;
       break;
     }
   }
@@ -48,7 +50,7 @@ cec.on( 'ROUTING_CHANGE', function(packet, fromSource, toSource) {
 
 cec.on( 'ACTIVE_SOURCE', function(packet, source ){
   console.log( 'Active source changed ' + source + '.' );
-  if(source == "0") {
+  if(source == "0" && POWER_ON) {
     console.log("forcing audio back");
     cec.send("tx 45:70:11:00");      
   }
