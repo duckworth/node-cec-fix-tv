@@ -2,7 +2,7 @@
   "name": "node-cec-fix-tv",
   "version": "1.0.0",
   "description": "node script for raspberry pi to fix wonky Samsung hdmi cec command",
-  "main": "fixtv.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
