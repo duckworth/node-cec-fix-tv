@@ -1,0 +1,29 @@
+{
+  "name": "node-cec-fix-tv",
+  "version": "1.0.0",
+  "description": "node script for raspberry pi to fix wonky Samsung hdmi cec command",
+  "main": "fixtv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duckworth/node-cec-fix-tv.git"
+  },
+  "keywords": [
+    "nodejs",
+    "hdmi",
+    "cec",
+    "raspberry",
+    "cec-client"
+  ],
+  "author": "John Lemp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duckworth/node-cec-fix-tv/issues"
+  },
+  "homepage": "https://github.com/duckworth/node-cec-fix-tv#readme",
+  "dependencies": {
+    "node-cec": "^0.1.2"
+  }
+}
