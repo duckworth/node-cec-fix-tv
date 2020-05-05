@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/duckworth/node-cec-fix-tv#readme",
   "dependencies": {
-    "console-stamp": "^0.2.6",
+    "console-stamp": "^0.2.9",
     "node-cec": "^0.1.2"
   }
 }
