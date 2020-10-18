@@ -1,5 +1,5 @@
 # node-cec-fix-tv
-node script for raspberry pi to fix wonky Samsung hdmi cec command
+node script for raspberry pi to fix wonky yamaha reciver and vizio hdmi cec command
 
 
 after checkout and npm install to run as service

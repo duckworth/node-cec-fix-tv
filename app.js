@@ -45,14 +45,15 @@ cec.on( 'REPORT_POWER_STATUS', function (packet, status) {
 });
 
 cec.on( 'ROUTING_CHANGE', function(packet, fromSource, toSource) {
-  console.log( 'Routing changed from ' + fromSource + ' to ' + toSource + '.' );
+  console.log( 'Routing changed from ' + fromSource + ' to ' + toSource + '.');
 });
 
 cec.on( 'ACTIVE_SOURCE', function(packet, source ){
   console.log( 'Active source changed ' + source + '.' );
-  if(source == "0" && POWER_ON) {
+  if(source == "20480" && POWER_ON) {
     console.log("forcing audio back");
-    cec.send("tx 45:70:11:00");      
+  //  cec.send("tx 45:70:11:00");      
+    cec.send("tx 4f:82:51:00");      
   }
 });
 
